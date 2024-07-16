@@ -1,0 +1,13 @@
+services:
+  solr:
+    container_name: solr
+    image: solr:latest
+    restart: always
+    volumes:
+      - ./data:/var/solr
+    ports:
+      - "8983:8983"
+    command:
+      - solr-precreate
+      - gettingstarted
+
